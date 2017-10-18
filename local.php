@@ -4,6 +4,9 @@
     <meta http-equiv="content-type" content="text/html; charset=en-us"/>
     <title>Testing Form</title>
     <style>
+        body {
+            padding: 20px;
+        }
         .input {
             width: 400px;
             height: 40px;
@@ -21,48 +24,27 @@
 </head>
 <body>
 <?php if ( isset( $_REQUEST['your_name']) ) : ?>
-<!-- <style>
-        .input {
-            width: 400px;
-            height: 40px;
-            font-size: 20px;
-        }
-        .btn {
-            width: 100px;
-            margin: 20px;
-        }
-    </style> -->
-    <!-- <button class="btn btn-success"><a href="/h1.php">Heirial 1 Search</a></button> -->
-    <button class="btn btn-primary"><a href="/index.php">Heirial Search</a></button>
+
+    <button class="btn btn-success"><a href="/index.php">Heirial Search</a></button>
 <form method="post" action="local.php">
-        <input class="input" type="text" name="your_name" placeholder="Local Heirial 2 ID" />
+        <input class="input" type="text" name="your_name" placeholder="Local Heirial 2 ID" autofocus/>
         <input class="btn btn-danger" type="submit" value="Send Data!"/>
     </form>
     
-<?php $api = 'http://localhost:3000/visitors/' . urlencode($_REQUEST['your_name']) . '/visits?mostRecent=true'; 
-
-    // echo $api;
+<?php
+    $ID = $_REQUEST['your_name'];
+    $api = 'http://localhost:3000/visitors/' . urlencode($ID) . '/visits?mostRecent=true'; 
     $response  = file_get_contents($api);
     $obj  = json_decode($response, true);
-    // echo gettype($obj);
-    // echo json_encode($obj, JSON_PRETTY_PRINT);
     highlight_string("<?php\n\$data =\n" . var_export($obj, true) . ";\n?>\n");
-    // print_r($obj);
-    // var_dump($obj);
-    
-    
 ?>
-
-<!-- <h2><a href=https://api.heirial.com/v2/visitors/<?php echo $_REQUEST['your_name']; ?>/visits?mostRecent=true> </h2> -->
-<!-- <button><a href="/index">Back</a></button> -->
    
 <?php else: ?>
 
 <div id="wrapper">
-    <!-- <button class="btn btn-success"><a href="/h1.php">Heirial 1 Search</a></button> -->
-    <button class="btn btn-primary"><a href="/index.php">Heirial Search</a></button>
+    <button class="btn btn-success"><a href="/index.php">Heirial Search</a></button>
     <form method="post" action="local.php">
-        <input class="input" type="text" name="your_name" placeholder="Local Heirial 2 ID"/>
+        <input class="input" type="text" name="your_name" placeholder="Local Heirial 2 ID" autofocus/>
         <input class="btn btn-danger" type="submit" value="Send Data!"/>
     </form>
     
