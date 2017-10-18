@@ -26,7 +26,7 @@
 <?php if ( isset( $_REQUEST['your_name']) ) : ?>
 
     <button class="btn btn-success"><a href="/index.php">Heirial Search</a></button>
-<form method="post" action="local.php">
+    <form method="post" action="local.php">
         <input class="input" type="text" name="your_name" placeholder="Local Heirial 2 ID" autofocus/>
         <input class="btn btn-danger" type="submit" value="Send Data!"/>
     </form>
@@ -34,7 +34,6 @@
 <?php
     $ID = $_REQUEST['your_name'];
     $api = 'http://localhost:3000/visitors/' . urlencode($ID) . '/visits?mostRecent=true';
-    echo $api; 
     $response  = file_get_contents($api);
     $obj  = json_decode($response, true);
     highlight_string("<?php\n\$data =\n" . var_export($obj, true) . ";\n?>\n");
@@ -48,6 +47,7 @@
         <input class="input" type="text" name="your_name" placeholder="Local Heirial 2 ID" autofocus/>
         <input class="btn btn-danger" type="submit" value="Send Data!"/>
     </form>
+    <h2>Need to fix in production</h2>
     
 
 <?php endif; ?>
