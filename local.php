@@ -33,7 +33,8 @@
     
 <?php
     $ID = $_REQUEST['your_name'];
-    $api = 'http://localhost:3000/visitors/' . urlencode($ID) . '/visits?mostRecent=true'; 
+    $api = 'http://localhost:3000/visitors/' . urlencode($ID) . '/visits?mostRecent=true';
+    echo $api; 
     $response  = file_get_contents($api);
     $obj  = json_decode($response, true);
     highlight_string("<?php\n\$data =\n" . var_export($obj, true) . ";\n?>\n");
