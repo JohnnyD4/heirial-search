@@ -32,7 +32,7 @@
     </form>
     
 <?php 
-    $ID = $_REQUEST['your_name'];
+    $ID = str_replace(' ', '', $_REQUEST['your_name']);
     $testID = '-';
     $pos = strpos($ID, $testID);
     if ($pos === 9) {
