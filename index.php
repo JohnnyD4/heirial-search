@@ -42,7 +42,7 @@
         highlight_string("<?php\n\$data =\n" . var_export($obj, true) . ";\n?>\n");
 
     } else if ($pos === 8) {
-        $api = 'https://api.heirial.com/v2/visitors/' . urlencode($ID) . '/visits?mostRecent=true';
+        $api = 'https://api.heirial.com/v2/visitors/' . urlencode($ID) . '/visits';
         $response  = file_get_contents($api);
         $obj  = json_decode($response, true);
         highlight_string("<?php\n\$data =\n" . var_export($obj, true) . ";\n?>\n");
