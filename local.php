@@ -20,6 +20,13 @@
             margin: 10px;
         }
     </style>
+    <script>
+        const telescopeConfig = {
+            debug: true,
+            stage: 'http://localhost:3000',
+        };
+    </script>
+    <script src="https://cdn.belunar.com/telescope/client.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 <body>
