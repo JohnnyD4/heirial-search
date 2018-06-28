@@ -59,7 +59,7 @@ $comments = $_REQUEST['comments'];
             'test' => $name,
             'but' => 'maybe not',
             'telescope_id' => $telescope,
-            'telescope' => $telescope
+            'telescopesdg' => $telescope
         ))
     );
     curl_error($ch);
