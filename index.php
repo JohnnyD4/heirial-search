@@ -23,10 +23,10 @@
     <script>
         var telescopeConfig = {
             debug: true,
-            stage: 'http://localhost:3000',
+            stage: 'production',
         };
     </script>
-    <script src="https://cdn.belunar.com/telescope/client.min.js"></script>
+    <script src="https://cdn.belunar.com/telescope/hc.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 <body>
@@ -89,7 +89,9 @@ $comments = $_REQUEST['comments'];
     $headers .= 'From: <noreply@KOPhotos.com>' . "\r\n";
 
     $message = wordwrap($message, 70);
-    mail("johnsdavis95@gmail.com", "New Potential Client on Site!", $message, $headers);
+    // mail("johnsdavis95@gmail.com", "New Potential Client on Site!", $message, $headers);
+    // $apiUrl = file_get_contents('localhost:3000/visits/1');
+    $test = json_decode($apiUrl);
     if ($pos === 9) {
         $api = 'http://heirial-api.herokuapp.com/' . urlencode($ID) . '/visits.json';
         $response  = file_get_contents($api);
